@@ -25,12 +25,13 @@
   post_tasks:
     - name: Copy jenkins tasks to /var/lib/jenkins/jobs
       copy:
-        src: jenkins-jobs/MyCoolApp
+        src: files/jenkins-jobs/MyCoolApp
         dest: /var/lib/jenkins/jobs
         owner: jenkins
         group: jenkins
         mode: 0644
         directory_mode: 0755
+      notify: restart jenkins
 
     - name: Add user 'jenkins' to password-less sudoers
       lineinfile:
