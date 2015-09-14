@@ -1,5 +1,1 @@
-.bundle
-.kitchen
-
-Gemfile.lock
-roles
+.DS_Store
