@@ -2,6 +2,8 @@
 
 An Ansible role that deploys Jenkins CI with a job that runs Test Kitchen to test an Ansible role from GitHub.
 
+## Prepare a Virtual Machine
+
 ### 1. Start a Vagrant Virtual Machine
 
 ```
@@ -34,5 +36,8 @@ $ ansible-playbook -i hosts playbook.yml
 
 When asked for a password, enter `vagrant`.
 
+## Run the Jenkins Build
 
-After successful provisioning, Jenkins can be accessed via `192.168.0.66:8080` in your browser. Jenkins comes readily configured with a project called `MyCoolApp`. When you build the project, [Test Kitchen](http://kitchen.ci) will execute [Serverspec](http://serverspec.org) tests against an Ansible role and present its colorized results in the Jenkins Build's Console Output.
+After successful provisioning, Jenkins can be accessed via, e.g., `http://192.168.0.66:8080` in your browser. Jenkins comes readily configured with a project called `MyCoolApp`. When you build the project, [Test Kitchen](http://kitchen.ci) will execute [Serverspec](http://serverspec.org) tests against an [Ansible](http://ansible.com) role and present its colorized results in the Jenkins Build's Console Output.
+
+![Image of Test Kitchen run in Jenkins](http://metmajer.github.io/jenkins-test-kitchen-ansible/img/JenkinsScreenshot.png)
